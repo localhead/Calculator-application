@@ -7,24 +7,12 @@ function App() {
   const [mainOutput, setMainOutput] = useState("0");
   const [opFlag, setOpFlag] = useState(0);
   const [resFound, setResFound] = useState(0);
-
-  const airline = "Aeroflot Russia";
-  //console.log(airline.slice(0, -1));
-
-  /*   const str = "5+5";
-
-  
-  const a = "4";
-  const b = "-";
-  const c = "2";
-  const res = a + b + c;
-  console.log(res);
-
-  const nmb = eval(str);
-  console.log(nmb); */
+  const [dotFlag, setDotFlag] = useState(0);
 
   /* Here we creating a string which has previous data*/
   const addNumber = (event) => {
+    setDotFlag(0);
+
     if (resFound === 1) {
       setUpperOutput("0");
       setMainOutput("0");
@@ -46,6 +34,10 @@ function App() {
   };
 
   const addOperation = (event) => {
+    if (dotFlag === 1) {
+      setMainOutput(mainOutput.slice(0, -1));
+    }
+
     if (resFound === 1) {
       setUpperOutput("0");
       setMainOutput("0");
@@ -85,6 +77,28 @@ function App() {
     setUpperOutput("0");
   };
 
+  const makeNegative = () => {
+    if (resFound !== 1) {
+      if (eval(mainOutput) > 0) {
+        setMainOutput("-" + mainOutput);
+      } else if (eval(mainOutput) < 0) {
+        setMainOutput(String(eval(mainOutput * -1)));
+      }
+    }
+  };
+
+  const addDot = () => {
+    setDotFlag(1);
+
+    if (resFound !== 1) setMainOutput(mainOutput + ".");
+  };
+
+  const deleteSymbol = () => {
+    if (resFound !== 1 && mainOutput.length !== 1) {
+      setMainOutput(mainOutput.slice(0, -1));
+    }
+  };
+
   /*   console.log(output); */
 
   return (
@@ -99,7 +113,9 @@ function App() {
           <button className="fr-styling" onClick={ClearAll}>
             AC
           </button>
-          <button className="fr-styling">-/+</button>
+          <button className="fr-styling" onClick={makeNegative}>
+            -/+
+          </button>
           <button className="fr-styling" onClick={addOperation}>
             %
           </button>
@@ -137,8 +153,8 @@ function App() {
           <button onClick={addNumber} className="zero-edit">
             0
           </button>
-          <button onClick={addNumber}>.</button>
-          <button>-</button>
+          <button onClick={addDot}>.</button>
+          <button onClick={deleteSymbol}>←</button>
           <button className="show-result results-edit" onClick={timeToShowRes}>
             =
           </button>
