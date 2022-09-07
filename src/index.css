@@ -7,6 +7,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(
+    circle,
+    rgb(207, 207, 207) 0%,
+    rgb(211, 211, 211) 100%
+  );
+}
+
+button {
+  transition: all 0.15s ease-in;
 }
 
 code {

@@ -89,41 +89,57 @@ function App() {
 
   return (
     <div className="container">
-      <div className="output-row">
-        {" "}
-        <div className="show-result-output">{upperOutput}</div>
-        <div className="screen-output">{mainOutput}</div>
+      <div className="content">
+        <div className="output-row">
+          {" "}
+          <div className="show-result-output">{upperOutput}</div>
+          <div className="screen-output">{mainOutput}</div>
+        </div>
         <div className="first-row">
-          <button onClick={ClearAll}>AC</button>
-          <button>-/+</button>
-          <button onClick={addOperation}>%</button>
-          <button onClick={addOperation}>/</button>
+          <button className="fr-styling" onClick={ClearAll}>
+            AC
+          </button>
+          <button className="fr-styling">-/+</button>
+          <button className="fr-styling" onClick={addOperation}>
+            %
+          </button>
+          <button className="column-styling" onClick={addOperation}>
+            /
+          </button>
         </div>
         <div className="second-row">
           <button onClick={addNumber}>7</button>
           <button onClick={addNumber}>8</button>
           <button onClick={addNumber}>9</button>
-          <button onClick={addOperation}>*</button>
+          <button className="column-styling" onClick={addOperation}>
+            *
+          </button>
         </div>
         <div className="third-row">
           <button onClick={addNumber}>4</button>
           <button onClick={addNumber}>5</button>
           <button onClick={addNumber}>6</button>
-          <button onClick={addOperation}>-</button>
+          <button className="column-styling" onClick={addOperation}>
+            -
+          </button>
         </div>
         <div className="forth-row">
           {" "}
           <button onClick={addNumber}>3</button>
           <button onClick={addNumber}>2</button>
           <button onClick={addNumber}>1</button>
-          <button onClick={addOperation}>+</button>
+          <button className="column-styling" onClick={addOperation}>
+            +
+          </button>
         </div>
         <div className="last-row">
           {" "}
-          <button onClick={addNumber}>0</button>
+          <button onClick={addNumber} className="zero-edit">
+            0
+          </button>
           <button onClick={addNumber}>.</button>
-          <button>←</button>
-          <button className="show-result" onClick={timeToShowRes}>
+          <button>-</button>
+          <button className="show-result results-edit" onClick={timeToShowRes}>
             =
           </button>
         </div>

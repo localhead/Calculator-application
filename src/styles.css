@@ -1,12 +1,20 @@
 .container {
-  padding-top: 5%;
+  padding-top: 3%;
   width: 400px;
   text-align: center;
   margin: 0 auto;
   border-radius: 5px;
+  height: 400px;
+}
+
+.content {
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 150px;
 }
 
 .show-result-output {
+  border-top-left-radius: 15px 15px;
+  border-top-right-radius: 15px 15px;
   text-align: right;
   font-family: "Poppins", sans-serif;
   font-size: 28px;
@@ -26,15 +34,35 @@
   background-color: rgb(74, 70, 82);
 }
 
+.results-edit {
+  border-bottom-right-radius: 20px 20px;
+  background-color: rgb(255, 150, 52);
+}
+
+.fr-styling {
+  background-color: rgb(190, 190, 190);
+}
+
+.column-styling {
+  background-color: rgb(255, 187, 123);
+}
+
+.zero-edit {
+  border-bottom-left-radius: 20px 20px;
+}
+
 button {
   font-family: "Poppins", sans-serif;
   font-size: 22px;
   width: 100px;
   height: 100px;
-  border: 0.5px solid rgb(209, 209, 209);
+  border: 0px solid rgb(228, 228, 228);
 }
 
 button:hover {
-  background-color: rgb(209, 233, 253);
-  transition: 0.5s ease;
+  background-color: rgb(255, 150, 52);
+}
+
+.results-edit:hover {
+  background-color: rgb(231, 112, 0);
 }
